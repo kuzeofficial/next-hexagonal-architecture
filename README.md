@@ -1,4 +1,4 @@
-# ✨ Template of project with Hexagonal Architecture using [NextJS](https://beta.nextjs.org/docs)
+# ✨ Hexagonal Architecture using [NextJS](https://beta.nextjs.org/docs)
 
 ## 🚀 Project Structure
 
