@@ -7,7 +7,7 @@ import { usePeopleContext } from '../context/WelcomeContextProvider';
 const schema = yup.object().shape({
   name: yup.string().required('Name is required').min(3, 'Name must be at least 3 characters').max(50, 'Name must be at most 50 characters'),
   imageUrl: yup.string().required('Image Url is required').test('url', 'Invalid image url', (value) => {
-    return /^(https?|ftp):\/\/[^\s/$.?#].[^\s]*\.(jpe?g|png|gif|svg)$/.test(value);
+    return /^(https?|ftp):\/\/[^\s/$.?#].[^\s]*\.(jpe?g|png|gif|svg|WEBP|JPG)$/.test(value);
   }),
 });
 

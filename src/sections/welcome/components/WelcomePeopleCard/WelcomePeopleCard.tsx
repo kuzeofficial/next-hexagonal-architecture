@@ -3,9 +3,16 @@ import Image from "next/image";
 
 const WelcomePeopleCard = ({ people }: { people: People }) => {
   return (
-    <div>
-      <Image src={people.imageUrl} alt={people.name} width="200" height="200" />
-      <h3>{people.name}</h3>
+    <div className="bg-gray-500 pb-3 rounded-lg ">
+      <Image
+        src={people.imageUrl}
+        alt={people.name}
+        width={200}
+        height={200}
+        className="rounded-t-lg object-cover w-full max-h-[200px]"
+      />
+
+      <h3 className="px-4 pt-2 text-gray-300">{people.name}</h3>
     </div>
   );
 };

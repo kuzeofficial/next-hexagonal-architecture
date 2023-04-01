@@ -4,11 +4,9 @@ import { WelcomePeopleCard } from "../WelcomePeopleCard";
 const WelcomePeopleList = () => {
   const { peoples } = usePeopleContext();
   return (
-    <section>
+    <section className="justify-center mt-4 flex gap-5 sm:flex-row flex-col">
       {peoples.map((people) => (
-        <div key={people.id}>
-          <WelcomePeopleCard people={people} />
-        </div>
+        <WelcomePeopleCard key={people.id} people={people} />
       ))}
     </section>
   );
