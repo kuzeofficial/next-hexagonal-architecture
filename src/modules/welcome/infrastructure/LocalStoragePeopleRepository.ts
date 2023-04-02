@@ -6,7 +6,13 @@ export function createLocalStoragePeopleRepository(): PeopleRepository {
 		save,
 		get,
 		getAll,
+		getPeopleList,
 	};
+}
+
+async function getPeopleList() {
+	const res = await fetch("/api/welcome");
+	return res.json()
 }
 
 function save(people: People) {

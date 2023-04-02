@@ -28,6 +28,9 @@ package-lock.json
 yarn.lock
 pnpm-lock.yaml
 
+# Cypress
+cypress/
+
 # debug
 npm-debug.log*
 yarn-debug.log*
