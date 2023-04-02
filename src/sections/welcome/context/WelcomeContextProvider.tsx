@@ -39,12 +39,7 @@ export const WelcomeContextProvider = ({
   }, []);
 
   return (
-    <WelcomeContext.Provider
-      value={{
-        peoples,
-        createPeople: create,
-      }}
-    >
+    <WelcomeContext.Provider value={{ peoples, createPeople: create }}>
       {children}
     </WelcomeContext.Provider>
   );

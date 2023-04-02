@@ -8,6 +8,10 @@
 |   └── favicon.svg
 |   └── images
 ├── src/
+|   └── e2e
+|   |   └── tests/
+|   |   |   └── app.cy.ts
+|   |   └── support/
 |   └── types-env.d.ts
 |   ├── styles/
 |   |   └── globals.css
@@ -28,10 +32,13 @@
 |   |   |   └── application
 |   |   |   └── domain
 |   |   |   └── infrastructure
+|   |   |   |   └── tests
+|   |   |   |   |   └── e2e
 |   ├── sections/
 |   |   ├── [module-name]/
 |   |   |   └── components
 |   |   |   |   └── CardExample
+|   |   |   |   |   └── tests
 |   |   |   |   |   └── index.ts
 |   |   |   |   |   └── CardComponent.tsx
 |   |   |   └── context
