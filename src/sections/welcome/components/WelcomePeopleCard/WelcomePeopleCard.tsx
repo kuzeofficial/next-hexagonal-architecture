@@ -3,10 +3,10 @@ import Image from "next/image";
 
 const WelcomePeopleCard = ({ people }: { people: People }) => {
   return (
-    <div className="bg-gray-500 pb-3 rounded-lg ">
+    <div className="pb-3 bg-gray-500 rounded-lg ">
       <Image
         src={people.imageUrl}
-        alt={people.name}
+        alt={people.name + "-image"}
         width={200}
         height={200}
         className="rounded-t-lg object-cover w-full max-h-[200px]"

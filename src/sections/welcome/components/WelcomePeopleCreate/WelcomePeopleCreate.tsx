@@ -18,11 +18,12 @@ const WelcomePeopleCreate = () => {
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className="mt-8 gap-2 justify-center flex sm:flex-row flex-col"
+      className="flex flex-col justify-center gap-2 mt-8 sm:flex-row"
     >
-      <div className="flex-col flex py-1">
+      <div className="flex flex-col py-1">
         <input
-          className="ring-2 focus:border-none appearance-none bg-transparent  leading-tight focus:outline-none text-white border-blue-300 px-2 py-1 rounded-md"
+          role="textbox"
+          className="px-2 py-1 leading-tight text-white bg-transparent border-blue-300 rounded-md appearance-none ring-2 focus:border-none focus:outline-none"
           {...register("name")}
           placeholder="Cristian Fonseca"
         />
@@ -30,9 +31,10 @@ const WelcomePeopleCreate = () => {
           {errors?.name?.message as string}
         </span>
       </div>
-      <div className="flex-col flex py-1">
+      <div className="flex flex-col py-1">
         <input
-          className="ring-2 focus:border-none appearance-none bg-transparent  leading-tight focus:outline-none text-white border-blue-300 px-2 py-1 rounded-md"
+          role="textbox"
+          className="px-2 py-1 leading-tight text-white bg-transparent border-blue-300 rounded-md appearance-none ring-2 focus:border-none focus:outline-none"
           {...register("imageUrl")}
           placeholder="Image URL"
         />
@@ -41,6 +43,7 @@ const WelcomePeopleCreate = () => {
         </span>
       </div>
       <button
+        role="button"
         className="px-4 max-h-[32px] mt-0.5 hover:bg-slate-300 duration-200 transition-all bg-slate-200 rounded-md "
         type="submit"
       >
