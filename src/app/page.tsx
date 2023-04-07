@@ -9,10 +9,10 @@ export default function Home() {
 
   return (
     <WelcomeContextProvider repository={repository}>
-      <h1 className="text-gray-100 text-4xl">
+      <h1 className="text-4xl text-gray-100">
         ✨ NextJS Hexagonal Architecture Template🔯
       </h1>
-      <p className="text-gray-400 mt-4 text-md">
+      <p className="mt-4 text-gray-400 text-md">
         Thanks for using this template 🖤
       </p>
       <WelcomePeopleList />
