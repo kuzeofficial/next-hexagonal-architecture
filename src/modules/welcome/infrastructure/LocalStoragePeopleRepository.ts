@@ -1,51 +1,56 @@
 import { People } from "../domain/People";
 import { PeopleRepository } from "../domain/PeopleRepository";
+import { v4 as uuidv4 } from "uuid";
 
 export function createLocalStoragePeopleRepository(): PeopleRepository {
-	return {
-		save,
-		get,
-		getAll,
-		getPeopleList,
-	};
+  return {
+    save,
+    get,
+    getAll,
+    getPeopleList,
+  };
 }
 
 async function getPeopleList() {
-	const res = await fetch("/api/welcome");
-	return res.json()
+  const res = await fetch("/api/welcome");
+  return res.json();
 }
 
 function save(people: People) {
-	const peoples = getAllFromLocalStorage();
-  peoples.set(people.id ,people)
-	localStorage.setItem("peoples", JSON.stringify(Array.from(peoples.entries())));
+  const peoples = getAllFromLocalStorage();
+  const idAlt = (uuidv4 as () => string)();
+  peoples.set(people.id ?? idAlt, people);
+  localStorage.setItem(
+    "peoples",
+    JSON.stringify(Array.from(peoples.entries()))
+  );
 }
 
 function get(id: string) {
-	const peoples = getAllFromLocalStorage();
-	const people = peoples.get(id);
+  const peoples = getAllFromLocalStorage();
+  const people = peoples.get(id);
 
-	if (!people) {
-		return null;
-	}
+  if (!people) {
+    return null;
+  }
 
-	return people;
+  return people;
 }
 
 function getAll() {
-	const peoples = getAllFromLocalStorage();
+  const peoples = getAllFromLocalStorage();
 
-	return Array.from(peoples.values());
+  return Array.from(peoples.values());
 }
 
 function getAllFromLocalStorage(): Map<string, People> {
-	const peoples = localStorage.getItem("peoples");
+  const peoples = localStorage.getItem("peoples");
 
-	if (peoples === null) {
-		return new Map();
-	}
+  if (peoples === null) {
+    return new Map();
+  }
 
-	const map = new Map(JSON.parse(peoples) as Iterable<[string, People]>);
+  const map = new Map(JSON.parse(peoples) as Iterable<[string, People]>);
 
-	return map;
+  return map;
 }
