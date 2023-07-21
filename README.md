@@ -63,4 +63,6 @@ All commands are run from the root of the project, from a terminal:
 | `yarn preview`         | Preview your build locally, before deploying       |
 
 
-## ⭐ Please leave a star if you liked the repo and also feel free to do some PR
+## ⭐ Contribute
+
+Please leave a star if you liked the repo and also feel free to do some PR
