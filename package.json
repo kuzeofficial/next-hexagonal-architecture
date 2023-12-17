@@ -4,7 +4,6 @@
   "author": "Cristian Fonseca",
   "license": "MIT",
   "description": "A template for Next.js using Hexagonal Architecture",
-  "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
