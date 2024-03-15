@@ -23,11 +23,6 @@
 .vscode/
 .idea/
 
-# Locks
-package-lock.json
-yarn.lock
-pnpm-lock.yaml
-
 # Cypress
 cypress/
 
@@ -39,12 +34,6 @@ yarn-error.log*
 
 # local env files
 .env*.local
-
-
-#locks
-package-lock.json
-yarn.lock
-pnpm-lock.yaml
 
 # vercel
 .vercel
