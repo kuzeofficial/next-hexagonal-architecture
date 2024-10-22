@@ -1,3 +1,4 @@
+import MillionLint from "@million/lint";
 // @ts-check
 
 /**
@@ -14,4 +15,7 @@ const nextConfig = {
   },
 };
 
-export default nextConfig;
+export default MillionLint.next({
+  enabled: true,
+  rsc: true
+})(nextConfig);

@@ -1,8 +1,9 @@
 "use client";
+import React from "react";
 import { People } from "@/modules/welcome/domain/People";
 import { useFormPeople } from "@/sections/welcome/hooks/useFormPeople";
 
-const WelcomePeopleCreate = () => {
+const WelcomePeopleCreate = React.memo(() => {
   const { register, handleSubmit, errors, reset, createPeople } =
     useFormPeople();
 
@@ -51,6 +52,6 @@ const WelcomePeopleCreate = () => {
       </button>
     </form>
   );
-};
+});
 
 export default WelcomePeopleCreate;

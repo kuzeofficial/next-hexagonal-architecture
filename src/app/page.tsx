@@ -1,4 +1,5 @@
 "use client";
+import React, { useMemo } from "react";
 import { WelcomePeopleCreate } from "@/sections/welcome/components/WelcomePeopleCreate";
 import { WelcomePeopleList } from "@/sections/welcome/components/WelcomePeopleList";
 import { WelcomeContextProvider } from "@/sections/welcome/context";
@@ -6,6 +7,9 @@ import { createLocalStoragePeopleRepository } from "@/modules/welcome/infrastruc
 
 export default function Home() {
   const repository = createLocalStoragePeopleRepository();
+
+  // Memoize the WelcomePeopleList component
+  const memoizedWelcomePeopleList = useMemo(() => <WelcomePeopleList />, [repository]);
 
   return (
     <WelcomeContextProvider repository={repository}>
@@ -15,7 +19,7 @@ export default function Home() {
       <p className="mt-4 text-gray-400 text-md">
         Thanks for using this template 🖤
       </p>
-      <WelcomePeopleList />
+      {memoizedWelcomePeopleList}
       <WelcomePeopleCreate />
     </WelcomeContextProvider>
   );
